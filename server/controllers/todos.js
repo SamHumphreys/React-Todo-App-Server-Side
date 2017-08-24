@@ -7,7 +7,11 @@ module.exports = {
       .create({
         title: req.body.title
       })
-      .then(todo => res.status(201).send(todo))
+      .then(todo => {
+        todo.dataValues.todoItems = [];
+        res.status(201).send(todo)
+      })
+
       .catch(error => res.status(400).send(error))
   },
   list(req, res) {
