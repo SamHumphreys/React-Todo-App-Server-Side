@@ -17,11 +17,15 @@ module.exports = {
   list(req, res) {
     return Todo
       .findAll({
+        // where: {
+        //   archived: false
+        // },
         include: [{
           model: TodoItem,
           as: 'todoItems'
         }]
       })
+
       .all()
       .then((todos) => {
         todos.forEach((todo) => {

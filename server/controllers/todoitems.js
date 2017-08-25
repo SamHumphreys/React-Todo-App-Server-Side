@@ -14,8 +14,8 @@ module.exports = {
       .catch(error => res.status(400).send(error));
   },
   update(req, res) {
-    if (req.method === 'OPTIONS') {
-      res.send(200)};
+    // if (req.method === 'OPTIONS') {
+    //   res.send(200)};
     return TodoItem
       .find({
         where: {
