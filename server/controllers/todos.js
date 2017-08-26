@@ -74,7 +74,8 @@ module.exports = {
         }
         return todo
           .update({
-            title: req.body.title || todo.title
+            title: req.body.title || todo.title,
+            archived: req.body.archived || todo.archived
           })
           .then(todo => res.status(200).send(todo))
           .catch(error => res.status(400).send(error))
