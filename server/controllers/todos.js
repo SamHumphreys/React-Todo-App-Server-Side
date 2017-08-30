@@ -24,11 +24,6 @@ module.exports = {
       })
       .all()
       .then((todos) => {
-        todos.forEach((todo) => {
-          todo.todoItems = todo.todoItems.sort((a,b) => {
-            return a.dataValues.id - b.dataValues.id;
-          });
-        });
         res.setHeader('Access-Control-Allow-Origin', '*');
         res.status(200).send(todos)})
       .catch((error) => {
